@@ -3,100 +3,263 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Donate Now | ConvergePay</title>
+  <title>Donate Now | Samaritana West Africa</title>
   <style>
-    body {
-      background-color: #F5F6F8; /* light neutral bg */
-      font-family: "Trebuchet MS", sans-serif;
+    * {
       margin: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f8f9fa;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .header {
+      background: white;
+      color: #333;
+      padding: 2rem 0;
+      text-align: center;
+      border-bottom: 3px solid #ff6b6b;
+    }
+
+    .header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: #2c5aa0;
+    }
+
+    .header p {
+      font-size: 1.1rem;
+      color: #666;
+    }
+
+    .main-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
     }
 
     .donate-container {
-      background: #FFFFFF;
-      padding: 40px 40px;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      width: 360px;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+      padding: 3rem;
+      margin-bottom: 3rem;
       text-align: center;
     }
 
-    h1 {
-      color: #006D68; /* dark teal */
-      font-size: 24px;
-      margin-bottom: 10px;
+    .donate-container h2 {
+      color: #000000;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      font-weight: 700;
+      text-transform: uppercase;
     }
 
-    p {
-      color: #333333;
-      font-size: 15px;
-      margin-bottom: 25px;
+    .donate-container p {
+      color: #666;
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .donate-checkbox {
-      margin: 20px 0;
-      font-size: 14px;
-      color: #333333;
+      margin: 2rem 0;
+      font-size: 0.9rem;
+      color: #666;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 0.5rem;
+      text-align: left;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     input[type="checkbox"] {
-      transform: scale(1.2);
-      accent-color: #009688; /* lighter teal for check accent */
+      transform: scale(1.3);
+      accent-color: #2c5aa0;
       cursor: pointer;
-      margin-right: 8px;
     }
 
     .donate-button {
+      background: linear-gradient(135deg, #2c5aa0 0%, #1e3a5f 100%);
       color: #ffffff;
-      background-color: #006D68; /* primary teal */
-      font-size: 15px;
+      font-size: 1.1rem;
       font-weight: 600;
-      padding: 12px 24px;
-      border-radius: 6px;
+      padding: 1rem 2.5rem;
+      border-radius: 8px;
       border: none;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+      box-shadow: 0 4px 16px rgba(44, 90, 160, 0.3);
       cursor: pointer;
-      transition: background-color 0.25s ease, transform 0.15s ease;
+      transition: all 0.3s ease;
       width: 100%;
-      max-width: 250px;
+      max-width: 300px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
 
     .donate-button:hover:enabled {
-      background-color: #004D47; /* darker shade on hover */
       transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(44, 90, 160, 0.4);
     }
 
     .donate-button:disabled {
-      background-color: #A3C3C0; /* muted teal */
+      background: #ccc;
       cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .impact-section {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .impact-card {
+      background: #ffffff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      text-align: center;
+      transition: transform 0.3s ease;
+      border: 2px solid #ff6b6b;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .impact-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .impact-card h3 {
+      color: #dc3545;
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .impact-card p {
+      color: #333;
+      font-size: 1rem;
+      line-height: 1.5;
+      margin-bottom: 0.5rem;
+    }
+
+    .impact-card .price {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #2c5aa0;
+      margin-top: auto;
+      padding-top: 1rem;
+    }
+    .margin-top {
+      margin-top: 2rem;
     }
 
     .footer-text {
-      margin-top: 25px;
-      font-size: 12px;
-      color: #888888;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #888;
+      text-align: center;
+    }
+
+    .contact-info {
+      background: #f8f9fa;
+      padding: 2rem;
+      border-radius: 12px;
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    .contact-info h3 {
+      color: #2c5aa0;
+      margin-bottom: 1rem;
+    }
+
+    .contact-info p {
+      color: #666;
+      margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .main-content {
+        padding: 2rem 1rem;
+      }
+      
+      .donate-container {
+        padding: 2rem 1.5rem;
+      }
+      
+      .header h1 {
+        font-size: 2rem;
+      }
+      
+      .impact-section {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="donate-container">
-    <h1>Donate Now</h1>
-    <p>Your generosity helps shape a better future.</p>
+ 
+  <div class="main-content">
+    <div class="donate-container">
+      <h2>HOW TO FINANCIALLY PARTNER WITH US: LEVELS OF IMPACT GIVING</h2>
+      
+      <div class="impact-section">
+        <div class="impact-card">
+          <h3>CHAMPION LEVEL</h3>
+          <p><strong>Survivor Support (food and care) for the month</strong></p>
+          <div class="price">U$ 50 per month</div>
+        </div>
+        
+        <div class="impact-card">
+          <h3>CHANGE LEVEL</h3>
+          <p><strong>Champion Level + Group/ Activities: tutors, transportation to survivor's support sessions/ monthly</strong></p>
+          <div class="price">U$ 100 per month</div>
+        </div>
+        
+        <div class="impact-card">
+          <h3>COMMUNITY LEVEL</h3>
+          <p><strong>Community Level + Pays operational costs and the needs for 2 safe houses for the month.</strong></p>
+          <div class="price">U$ 200 per month</div>
+        </div>
+      </div>
+    <div class="margin-top"> <p> Click recurring donation to start your monthly donation today- Otherwise it will be a one-time donation. You can give any amount at any time to support this work! We appreciate you!</p></div>
+      <div class="donate-checkbox">
+        <input id="recurring" type="checkbox" />
+        <label for="recurring">Make it a recurring donation</label>
+      </div>
 
-    <div class="donate-checkbox">
-      <input id="recurring" type="checkbox" />
-      <label for="recurring">Make it a recurring donation</label>
-    </div>
+      <button id="buyBtn" class="donate-button" >DONATE NOW</button>
 
-    <button id="buyBtn" class="donate-button" disabled>DONATE NOW</button>
+      <script src="https://www.convergepay.com/hosted-payments/buy_button_script/39765935786b6531516a6d7933756b364338544a4d674141415a69674567326f"></script>
 
-    <script src="https://www.convergepay.com/hosted-payments/buy_button_script/39765935786b6531516a6d7933756b364338544a4d674141415a69674567326f"></script>
-
-    <div class="footer-text">
-      Secured by ConvergePay®
+      <div class="footer-text">
+        Secured by ConvergePay®
+      </div>
+      
+      <div class="contact-info">
+        <h3>Tax-Deductible Donations for USA Donors</h3>
+        <p>Samaritana West Africa Youth Ministry is a nonprofit 501(c)(3) charitable organization recognized by the IRS. Donations made by U.S. donors may be eligible for tax deductions under IRS guidelines.</p>
+        <p style="margin-top: 1.5rem;"><strong>For assistance or questions, please contact:</strong></p>
+        <p><strong>Contact Person:</strong> Trusella Dingle</p>
+        <p><strong>Email:</strong> <a href="mailto:tdingle1221@gmail.com" style="color: #2c5aa0; text-decoration: none;">tdingle1221@gmail.com</a></p>
+      </div>
     </div>
   </div>
 
