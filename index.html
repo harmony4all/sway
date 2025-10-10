@@ -55,7 +55,7 @@
 
     .donate-container h2 {
       color: #000000;
-      font-size: 2rem;
+      font-size: 1.8rem;
       margin-bottom: 2rem;
       font-weight: 700;
       text-transform: uppercase;
@@ -75,13 +75,36 @@
       font-size: 0.9rem;
       color: #666;
       display: flex;
-      align-items: flex-start;
+      align-items: center;
       justify-content: center;
       gap: 0.5rem;
       text-align: left;
       max-width: 600px;
       margin-left: auto;
       margin-right: auto;
+    }
+
+    .arrow-pointer {
+      width: 24px;
+      height: 24px;
+      background-image: url('arrow.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      position: relative;
+      animation: bounce-arrow 1.5s ease-in-out infinite;
+      flex-shrink: 0;
+    }
+
+    @keyframes bounce-arrow {
+      0%, 100% {
+        transform: translateX(0);
+        opacity: 0.8;
+      }
+      50% {
+        transform: translateX(8px);
+        opacity: 1;
+      }
     }
 
     input[type="checkbox"] {
@@ -239,8 +262,12 @@
           <div class="price">U$ 200 per month</div>
         </div>
       </div>
-    <div class="margin-top"> <p> Click recurring donation to start your monthly donation today- Otherwise it will be a one-time donation. You can give any amount at any time to support this work! We appreciate you!</p></div>
+    <div class="margin-top"> <p> Click on recurring donation to start your monthly donation today-<br>
+      Otherwise, it will be a one-time donation. <br>
+      You can give any amount at any time to support this work! We appreciate you!
+      </p></div>
       <div class="donate-checkbox">
+        <div class="arrow-pointer"></div>
         <input id="recurring" type="checkbox" />
         <label for="recurring">Make it a recurring donation</label>
       </div>
@@ -258,7 +285,7 @@
         <p>Samaritana West Africa Youth Ministry is a nonprofit 501(c)(3) charitable organization recognized by the IRS. Donations made by U.S. donors may be eligible for tax deductions under IRS guidelines.</p>
         <p style="margin-top: 1.5rem;"><strong>For assistance or questions, please contact:</strong></p>
         <p><strong>Contact Person:</strong> Trusella Dingle</p>
-        <p><strong>Email:</strong> <a href="mailto:tdingle1221@gmail.com" style="color: #2c5aa0; text-decoration: none;">tdingle1221@gmail.com</a></p>
+        <p><strong>Email:</strong> <a href="mailto:info@samaritana.com" style="color: #2c5aa0; text-decoration: none;">info@samaritana.com</a></p>
       </div>
     </div>
   </div>
